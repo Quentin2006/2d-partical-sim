@@ -25,3 +25,14 @@ int sphere::draw(sf::RenderWindow & window) {
     window.draw(obj);
     return 1;
 }
+
+int sphere::get_mass(void) const {
+    return mass;
+}
+
+int sphere::get_x(void) const {
+    return x;
+}
+int sphere::get_y(void) const {
+    return y;
+}

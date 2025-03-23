@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/qscheetz/projects/2d-partical-sim/sphere
+CXX_INCLUDES = -I/home/qscheetz/projects/2d-partical-sim/sphere -I/home/qscheetz/projects/2d-partical-sim/world
 
 CXX_FLAGS = 
 

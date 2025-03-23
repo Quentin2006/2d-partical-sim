@@ -177,6 +177,30 @@ sphere/sphere.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/sphere/sphere.cpp.s
 .PHONY : sphere/sphere.cpp.s
 
+world/world.o: world/world.cpp.o
+.PHONY : world/world.o
+
+# target to build an object file
+world/world.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/world/world.cpp.o
+.PHONY : world/world.cpp.o
+
+world/world.i: world/world.cpp.i
+.PHONY : world/world.i
+
+# target to preprocess a source file
+world/world.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/world/world.cpp.i
+.PHONY : world/world.cpp.i
+
+world/world.s: world/world.cpp.s
+.PHONY : world/world.s
+
+# target to generate assembly for a file
+world/world.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/world/world.cpp.s
+.PHONY : world/world.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +216,9 @@ help:
 	@echo "... sphere/sphere.o"
 	@echo "... sphere/sphere.i"
 	@echo "... sphere/sphere.s"
+	@echo "... world/world.o"
+	@echo "... world/world.i"
+	@echo "... world/world.s"
 .PHONY : help
 
 
