@@ -2,8 +2,9 @@
 #include <vector>
 #include "../sphere/sphere.h"
 
+const double SCALE = 3e8;
 // gravitatinal constant
-const double G = 6.674e-11 / (1e6 * 1e6 * 1e6);
+const double G = 6.67430e-11/pow(SCALE,3); // gravitational constant
 
 class world {
     public:
