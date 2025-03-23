@@ -1,0 +1,3 @@
+/home/qscheetz/projects/2d-partical-sim/build/CMakeFiles/sfml-app.dir
+/home/qscheetz/projects/2d-partical-sim/build/CMakeFiles/edit_cache.dir
+/home/qscheetz/projects/2d-partical-sim/build/CMakeFiles/rebuild_cache.dir
