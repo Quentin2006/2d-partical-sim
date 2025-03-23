@@ -8,38 +8,47 @@ int world::add_sphere(sphere & add) {
     return 1;
 }
 
-int world::update(void) {
+int world::update(double delta_time) {
     int size = spheres.size();
 
     for (int i = 0; i < size; ++i) {
         for (int j = 0; j < size; ++j) {
             if (i != j) {
-                sphere &x = spheres[i];
-                sphere &y = spheres[j];
+                sphere& x = spheres[i];
+                sphere& y = spheres[j];
 
-                // Calculate distance between two objects
-                double distance = sqrt(pow(y.get_x() - x.get_x(), 2) + pow(y.get_y() - x.get_y(), 2));
-                // Calculate gravitational force between both objects
-                double grav_force = G * FORCE_SCALE * ((y.get_mass() * x.get_mass()) / pow(distance, 2));
+                // Compute distance
+                double dx = y.get_x() - x.get_x();
+                double dy = y.get_y() - x.get_y();
+                double distance = sqrt(dx * dx + dy * dy);
+                
+                if (distance < 1) continue;  // Prevent division by zero
 
-                // Get the x and y components of the gravitational force
-                double x_force = grav_force * ((y.get_x() - x.get_x()) / distance);
-                double y_force = grav_force * ((y.get_y() - x.get_y()) / distance);
+                // Gravitational force magnitude
+                double force = G * (x.get_mass() * y.get_mass()) / (distance * distance);
 
-                // Get the acceleration for x and y based on each object's mass
-                double acc_x_x = x_force / x.get_mass();  // acceleration of x due to force from y
-                double acc_y_x = y_force / x.get_mass();  // acceleration of x due to force from y
+                // Force components
+                double fx = force * (dx / distance);
+                double fy = force * (dy / distance);
 
-                double acc_x_y = x_force / y.get_mass();  // acceleration of y due to force from x
-                double acc_y_y = y_force / y.get_mass();  // acceleration of y due to force from x
+                // Compute acceleration
+                double ax = fx / x.get_mass();
+                double ay = fy / x.get_mass();
 
-                // Update positions for both spheres based on their accelerations
-                x.update_pos(acc_x_x, acc_y_x);
-                y.update_pos(acc_x_y, acc_y_y);
+                double bx = -fx / y.get_mass();
+                double by = -fy / y.get_mass();
 
+                // Apply acceleration
+                x.apply_acceleration(ax, ay, delta_time);
+                y.apply_acceleration(bx, by, delta_time);
+
+                // debug
+                cout << ax << " " << ay << " " << bx << " " << by << endl;
             }
-        }
+        }    
     }
+    for (int i = 0; i < size; ++i)
+        spheres[i].update(delta_time);
 
     return 1;
 }
@@ -47,7 +56,7 @@ int world::update(void) {
 
 // will draw all spheres to window
 int world::draw(sf::RenderWindow & window) {
-    for (sphere cur : spheres) 
+    for (sphere & cur : spheres) 
         cur.draw(window);
         
     return 1;
