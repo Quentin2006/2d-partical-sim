@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/qscheetz/projects/2d-partical-sim
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/qscheetz/projects/2d-partical-sim/build
+CMAKE_BINARY_DIR = /home/qscheetz/projects/2d-partical-sim
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/qscheetz/projects/2d-partical-sim/build/CMakeFiles /home/qscheetz/projects/2d-partical-sim/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/qscheetz/projects/2d-partical-sim/CMakeFiles /home/qscheetz/projects/2d-partical-sim//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/qscheetz/projects/2d-partical-sim/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/qscheetz/projects/2d-partical-sim/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,6 +153,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+sphere/sphere.o: sphere/sphere.cpp.o
+.PHONY : sphere/sphere.o
+
+# target to build an object file
+sphere/sphere.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/sphere/sphere.cpp.o
+.PHONY : sphere/sphere.cpp.o
+
+sphere/sphere.i: sphere/sphere.cpp.i
+.PHONY : sphere/sphere.i
+
+# target to preprocess a source file
+sphere/sphere.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/sphere/sphere.cpp.i
+.PHONY : sphere/sphere.cpp.i
+
+sphere/sphere.s: sphere/sphere.cpp.s
+.PHONY : sphere/sphere.s
+
+# target to generate assembly for a file
+sphere/sphere.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/sfml-app.dir/build.make CMakeFiles/sfml-app.dir/sphere/sphere.cpp.s
+.PHONY : sphere/sphere.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -165,6 +189,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... sphere/sphere.o"
+	@echo "... sphere/sphere.i"
+	@echo "... sphere/sphere.s"
 .PHONY : help
 
 

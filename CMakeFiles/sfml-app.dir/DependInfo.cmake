@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/qscheetz/projects/2d-partical-sim/main.cpp" "CMakeFiles/sfml-app.dir/main.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/main.cpp.o.d"
+  "/home/qscheetz/projects/2d-partical-sim/sphere/sphere.cpp" "CMakeFiles/sfml-app.dir/sphere/sphere.cpp.o" "gcc" "CMakeFiles/sfml-app.dir/sphere/sphere.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

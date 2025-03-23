@@ -1,22 +1,32 @@
 #include <SFML/Graphics.hpp>
+#include "events.cpp"
+#include "sphere/sphere.h"
+
+const float WINDOW_X = 1920u;
+const float WINDOW_Y = 1080u;
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::RenderWindow window({WINDOW_X, WINDOW_Y}, "SFML works!");
+    window.setFramerateLimit(175);
 
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
+    sphere sphere1(WINDOW_X/2, WINDOW_Y/2, 12.f, 1000, sf::Color(0, 255, 0));
+    sphere sphere2(WINDOW_X/2 + 300, WINDOW_Y/2 - 300, 12.f, 1000, sf::Color(255, 0, 0));
+    sphere sphere3(WINDOW_X/2 - 300, WINDOW_Y/2 + 300, 12.f, 1000, sf::Color(0, 0, 255));
+
+    while (window.isOpen()) {
+        event_loop(window);
+            
 
         window.clear();
-        window.draw(shape);
+        sphere1.draw(window);
+        sphere1.update_pos(0.1, 0.1);
+
+        sphere2.draw(window);
+        sphere2.update_pos(-0.1, 0.1);
+
+        sphere3.draw(window);
+        sphere3.update_pos(0.1, -0.1);
         window.display();
     }
 

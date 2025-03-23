@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/qscheetz/projects/2d-partical-sim")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/qscheetz/projects/2d-partical-sim/build")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/qscheetz/projects/2d-partical-sim")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)
